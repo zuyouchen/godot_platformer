@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="echen48_4cr_mp"
-run/main_scene="uid://jm2gdmdygxoi"
+run/main_scene="uid://btivg5pr2esco"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
