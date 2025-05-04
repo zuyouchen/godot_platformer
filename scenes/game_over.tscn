@@ -104,7 +104,7 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="RestartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_start_button_pressed"]
