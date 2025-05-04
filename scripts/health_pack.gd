@@ -3,7 +3,7 @@ extends Area2D
 @onready var game_manager: Node = %GameManager
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-# had to "connect" otherwise this didn't work (using node panel on RHS)
 func _on_body_entered(body: Node2D) -> void:
-	game_manager.add_point()
+	game_manager.consume_health_pack()
+	# same pickup animation player hack as the coin from tut
 	animation_player.play("pickup")

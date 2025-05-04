@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://b86ogp4bg5w1n"]
+
+[ext_resource type="Script" uid="uid://hvk4dh4v3m37" path="res://scripts/game_over.gd" id="1_tbwuq"]
+[ext_resource type="FontFile" uid="uid://crajleu8fpa4" path="res://assets/fonts/PixelOperator8.ttf" id="2_racf3"]
+[ext_resource type="FontFile" uid="uid://bregoh4kn4hiv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_7m3ot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouf4f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu50"]
+bg_color = Color(0.718381, 0.718381, 0.718381, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7x51"]
+bg_color = Color(0.312466, 0.312466, 0.312466, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouf4f"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tbwuq")
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -120.0
+offset_right = 295.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_racf3")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ouf4f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_thu50")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m7x51")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ouf4f")
+text = "Restart Game"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = 120.0
+offset_right = 297.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_racf3")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ouf4f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_thu50")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m7x51")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ouf4f")
+text = "Quit Game"
+
+[node name="TitleText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -828.0
+offset_top = 177.0
+offset_right = 836.0
+offset_bottom = 375.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.972021, 0.00100444, 0.000551386, 1)
+theme_override_fonts/font = ExtResource("3_7m3ot")
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_start_button_pressed"]

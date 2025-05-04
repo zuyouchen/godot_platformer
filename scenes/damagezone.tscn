@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwixkmpytca6a"]
+
+[ext_resource type="Script" uid="uid://dfdv7ok5wr0pc" path="res://scripts/damagezone.gd" id="1_rg5yr"]
+[ext_resource type="AudioStream" uid="uid://bnkn28ys1ibxo" path="res://assets/sounds/hurt.wav" id="2_blx23"]
+
+[node name="Damagezone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_rg5yr")
+
+[node name="OnHitSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_blx23")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://s3iaa0dqhudl"]
+
+[ext_resource type="Texture2D" uid="uid://coau4jrcr3igp" path="res://assets/enemies/Cactus/Cactus_1/Cactus_1.png" id="1_fy5iu"]
+[ext_resource type="PackedScene" uid="uid://dwixkmpytca6a" path="res://scenes/damagezone.tscn" id="2_3uwn4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy5iu"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uwn4"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(120, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiia4"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(120, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f17ax"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(120, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8fcr"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(144, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnkkd"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(144, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1an2p"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(144, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn4wg"]
+atlas = ExtResource("1_fy5iu")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3np2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy5iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uwn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiia4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f17ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8fcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnkkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1an2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn4wg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uwn4"]
+size = Vector2(7, 7)
+
+[node name="Cactus" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.49012e-08, -7)
+scale = Vector2(0.59375, 0.59375)
+sprite_frames = SubResource("SpriteFrames_a3np2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.815143
+
+[node name="Damagezone" parent="." instance=ExtResource("2_3uwn4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damagezone"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_3uwn4")
