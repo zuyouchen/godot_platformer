@@ -4,7 +4,7 @@ Notes from Evan (echen48) for CS415 Project Modification:
 - Added items from https://kevins-moms-house.itch.io/four-seasons-platformer-tileset
  to sprites/items_.png
  - Added healthbar from https://makertech.itch.io/additional-art-for-godot-4-tutorial to healthbar/
- 
+ - Added health SFX from https://motionarray.com/sound-effects/video-game-health-sound-effects-404359/
 
 --- Original License and Credits file from Brackeys --- 
 

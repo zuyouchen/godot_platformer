@@ -1,0 +1,192 @@
+[gd_scene load_steps=24 format=3 uid="uid://dketxnenk564c"]
+
+[ext_resource type="Script" uid="uid://b1ap07guvrm03" path="res://scripts/bomb.gd" id="1_3swkl"]
+[ext_resource type="Texture2D" uid="uid://p6stlbvcujpl" path="res://assets/enemies/Bomb/Idle_1/Idle_1_L_1.png" id="1_84slv"]
+[ext_resource type="Texture2D" uid="uid://ce0ooqmjkdmm3" path="res://assets/enemies/Bomb/Explode/Explode_L_1.png" id="1_k4r2f"]
+[ext_resource type="Texture2D" uid="uid://bc3ugr6nsae6a" path="res://assets/enemies/Bomb/Explode/Explode_L_2.png" id="2_3swkl"]
+[ext_resource type="Texture2D" uid="uid://do42s46t17rnu" path="res://assets/enemies/Bomb/Idle_1/Idle_1_L_2.png" id="2_nxi8k"]
+[ext_resource type="Texture2D" uid="uid://c7vcj230p3o00" path="res://assets/enemies/Bomb/Idle_1/Idle_1_L_3.png" id="3_1hf1o"]
+[ext_resource type="Texture2D" uid="uid://07lvfgeuvoc" path="res://assets/enemies/Bomb/Explode/Explode_L_3.png" id="3_gix0d"]
+[ext_resource type="Texture2D" uid="uid://dfv5ajqk1qcki" path="res://assets/enemies/Bomb/Idle_1/Idle_1_L_4.png" id="4_56fam"]
+[ext_resource type="Texture2D" uid="uid://p2c2anxtntcp" path="res://assets/enemies/Bomb/Explode/Explode_L_4.png" id="4_o4q78"]
+[ext_resource type="Texture2D" uid="uid://dl0ofrkhbr4i5" path="res://assets/enemies/Bomb/Explode/Explode_L_5.png" id="5_admb8"]
+[ext_resource type="Texture2D" uid="uid://dnyru3ajhc1js" path="res://assets/enemies/Bomb/Explode/Explode_L_6.png" id="6_q6q46"]
+[ext_resource type="Texture2D" uid="uid://db6wk3nw7272b" path="res://assets/enemies/Bomb/Explode/Explode_L_7.png" id="7_btcqa"]
+[ext_resource type="Texture2D" uid="uid://bm1jbpawtqi76" path="res://assets/enemies/Bomb/Explode/Explode_L_8.png" id="8_x3vyy"]
+[ext_resource type="Texture2D" uid="uid://dbspdey886xm2" path="res://assets/enemies/Bomb/Explode/Explode_L_9.png" id="9_ms7pa"]
+[ext_resource type="Texture2D" uid="uid://c7hqlrl7hb8b5" path="res://assets/enemies/Bomb/Explode/Explode_L_10.png" id="10_ypqo1"]
+[ext_resource type="Texture2D" uid="uid://em0j4axc47h5" path="res://assets/enemies/Bomb/Explode/Explode_L_11.png" id="11_rfvc7"]
+[ext_resource type="Texture2D" uid="uid://frmo4hst0rj1" path="res://assets/enemies/Bomb/Explode/Explode_L_12.png" id="12_1m0l3"]
+[ext_resource type="AudioStream" uid="uid://bgbu4bbg2jrc6" path="res://assets/sounds/explosion.wav" id="18_gix0d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bl7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k4r2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3swkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gix0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o4q78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_admb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q6q46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_btcqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x3vyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ms7pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ypqo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rfvc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1m0l3")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_84slv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nxi8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1hf1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_56fam")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_gix0d"]
+resource_name = "explode"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExplosionSFX:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ExplosionArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_o4q78"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ExplosionSFX:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExplosionArea/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o4q78"]
+_data = {
+&"RESET": SubResource("Animation_o4q78"),
+&"explode": SubResource("Animation_gix0d")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gix0d"]
+radius = 18.0
+
+[node name="Bomb" type="AnimatableBody2D"]
+script = ExtResource("1_3swkl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_6bl7j")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+target_position = Vector2(-28, 0)
+collision_mask = 2
+
+[node name="ExplosionSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_gix0d")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o4q78")
+}
+
+[node name="ExplosionArea" type="Area2D" parent="."]
+position = Vector2(0, -12)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_gix0d")
+disabled = true
+
+[connection signal="body_entered" from="ExplosionArea" to="." method="_on_explosion_area_body_entered"]

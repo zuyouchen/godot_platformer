@@ -9,4 +9,3 @@ func _on_body_entered(body: Node2D) -> void:
 		# apply knockback (defined in player.gd)
 		var knockback_direction = (body.global_position - global_position).normalized()
 		body.apply_knockback(knockback_direction, 200.0, 0.2)
-		

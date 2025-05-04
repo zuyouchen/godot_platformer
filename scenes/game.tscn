@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://jm2gdmdygxoi"]
+[gd_scene load_steps=59 format=4 uid="uid://jm2gdmdygxoi"]
 
 [ext_resource type="PackedScene" uid="uid://dwk150kb0cd7l" path="res://scenes/GUI.tscn" id="1_dinhu"]
 [ext_resource type="PackedScene" uid="uid://cgpo1i60e4qi0" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://cl7jkt6umg0w2" path="res://scripts/global_vars.gd" id="17_rysoc"]
 [ext_resource type="FontFile" uid="uid://bregoh4kn4hiv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="18_264po"]
 [ext_resource type="PackedScene" uid="uid://ct1eeaw1mpphp" path="res://scenes/balloon.tscn" id="20_1kice"]
+[ext_resource type="PackedScene" uid="uid://dketxnenk564c" path="res://scenes/bomb.tscn" id="21_5newe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -1078,6 +1079,21 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="Bomb" parent="Enemies" instance=ExtResource("21_5newe")]
+position = Vector2(3569, -18)
+
+[node name="Bomb2" parent="Enemies" instance=ExtResource("21_5newe")]
+position = Vector2(3610, -130)
+
+[node name="Bomb3" parent="Enemies" instance=ExtResource("21_5newe")]
+position = Vector2(3785, -33)
+
+[node name="Bomb4" parent="Enemies" instance=ExtResource("21_5newe")]
+position = Vector2(4025, -50)
+
+[node name="Bomb5" parent="Enemies" instance=ExtResource("21_5newe")]
+position = Vector2(3962, -130)
+
 [node name="Killzone" parent="." instance=ExtResource("5_iywne")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -1154,11 +1170,11 @@ text = "Enemies do 20 damage
 Avoid the slime!"
 
 [node name="hearts" type="Label" parent="Labels"]
-offset_left = 532.0
-offset_top = 18.0
-offset_right = 686.0
-offset_bottom = 37.0
-theme_override_colors/font_color = Color(0.00784314, 0.14902, 0.34902, 1)
+offset_left = 580.0
+offset_top = -130.0
+offset_right = 734.0
+offset_bottom = -111.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
 theme_override_fonts/font = ExtResource("9_0tnpc")
 theme_override_font_sizes/font_size = 8
 text = "Hearts restore
@@ -1216,13 +1232,54 @@ vertical_alignment = 1
 
 [node name="cactus" type="Label" parent="Labels"]
 offset_left = 1143.0
-offset_top = -185.0
+offset_top = -201.0
 offset_right = 1297.0
-offset_bottom = -166.0
+offset_bottom = -182.0
 theme_override_colors/font_color = Color(1, 0.823529, 0.196078, 1)
 theme_override_fonts/font = ExtResource("9_0tnpc")
 theme_override_font_sizes/font_size = 8
 text = "Don't touch cacti."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="balloon" type="Label" parent="Labels"]
+offset_left = 2082.0
+offset_top = -56.0
+offset_right = 2237.0
+offset_bottom = -37.0
+theme_override_colors/font_color = Color(0.435294, 0.172549, 0.466667, 1)
+theme_override_fonts/font = ExtResource("9_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "Watch out for balloons..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bombs" type="Label" parent="Labels"]
+offset_left = 3263.0
+offset_top = -147.0
+offset_right = 3514.0
+offset_bottom = -117.0
+theme_override_colors/font_color = Color(0.509804, 0.545098, 0.658824, 1)
+theme_override_fonts/font = ExtResource("9_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "Bombs explode when you get close...
+
+hint: set them off and move back! "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="winzone" type="Label" parent="Labels"]
+offset_left = 4232.0
+offset_top = -144.0
+offset_right = 4386.0
+offset_bottom = -114.0
+theme_override_colors/font_color = Color(0.509804, 0.545098, 0.658824, 1)
+theme_override_fonts/font = ExtResource("18_264po")
+theme_override_font_sizes/font_size = 8
+text = "Jump on
+this platform
+to win! 
+↓"
 horizontal_alignment = 1
 vertical_alignment = 1
 
