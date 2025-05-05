@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ct1eeaw1mpphp"]
+[gd_scene load_steps=29 format=3 uid="uid://ct1eeaw1mpphp"]
 
 [ext_resource type="Texture2D" uid="uid://skbngmsr4lt7" path="res://assets/enemies/Balloon/Balloon_1/Balloon_1.png" id="1_1eawp"]
 [ext_resource type="PackedScene" uid="uid://dwixkmpytca6a" path="res://scenes/damagezone.tscn" id="1_tpd1t"]
@@ -179,9 +179,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eawp"]
-size = Vector2(3, 12.5)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1eawp"]
 radius = 8.06226
 
@@ -195,10 +192,6 @@ autoplay = "idle"
 frame_progress = 0.693825
 
 [node name="Damagezone" parent="." instance=ExtResource("1_tpd1t")]
-
-[node name="BalloonStem" type="CollisionShape2D" parent="Damagezone"]
-position = Vector2(-0.5, -9.25)
-shape = SubResource("RectangleShape2D_1eawp")
 
 [node name="BalloonBody" type="CollisionShape2D" parent="Damagezone"]
 position = Vector2(0, -21)

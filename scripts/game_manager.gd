@@ -14,6 +14,7 @@ func _ready():
 func update_health_bar(new_health: int):
 	health_bar.value = new_health
 	health_label.text = "Health: " + str(new_health)
+	player.current_health = new_health
 	
 func add_point():
 	GlobalVars.score += 1
@@ -22,5 +23,5 @@ func add_point():
 # called by health_pack.gd
 func consume_health_pack():
 	if player.current_health < 100:
-		update_health_bar(min(100, player.current_health + 20))
+		update_health_bar(player.current_health + 20)
 		
